@@ -1,0 +1,269 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Open Sans", sans-serif;
+}
+body{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+/*header*/
+header{
+    width:100%;
+    height:100px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-bottom:1px solid rgba(219, 219, 219, 1);
+}
+.redberry-logo{
+    height:100px;
+    width:1596px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+}
+.redberry-img{
+    cursor:pointer;
+}
+
+/*image*/
+.rental-property-section{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+.go-back-container{
+    width:1591px;
+    height:32px;
+    display:flex;
+    justify-content:flex-start;
+    margin-top:96px;
+    cursor:pointer;
+}
+.go-back-btn{
+    border:none;
+    cursor:pointer;
+}
+.house-container{
+    margin-top:29px;
+    width:1591px;
+    height:714px;
+    display:flex;
+    gap:68px;
+    position: relative;
+}
+.image-container{
+    width:839px;
+    height:714px;
+    display:flex;
+    flex-direction:column;
+}
+.real-esate-house-img{
+    object-fit:cover;
+}
+.rental-category{
+    position:absolute;
+    width:142px;
+    height:41px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    top:23px;
+    left:23px;
+    border-radius:20px;
+    color:white;
+    font-weight:bold;
+    background: rgba(2, 21, 38, 0.5);
+    font-size:20px;
+}
+.date-of-upload{
+    width:839px;
+    height:44px;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    font-size:16px;
+    color:rgba(128, 138, 147, 1);
+}
+
+/*information*/
+/*price-area-bedcount-zipcode*/
+.information-container{
+    width:503px;
+    height:714px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+}
+.real-estate-house-img{
+   object-fit:cover;
+}
+.price-address-area-zip-container{
+    width:338px;
+    height:246px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+.price-container{
+    font-weight:bold;
+    font-size:48px;
+    color:black;
+}
+.icons-container{
+    width:500px;
+    height:164px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+.icons{
+    display:flex;
+    align-items:center;
+    font-size:24px;
+    color:rgba(128, 138, 147, 1);
+    gap:4px;
+}
+
+
+/*description*/
+.description-owner-container{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    width:503px;
+    height:356px;
+}
+.description-container{
+    font-size:16px;
+    line-height:1.6;
+    color:rgba(128, 138, 147, 1);
+}
+.owner-container{
+    width:503px;
+    height:228px;
+    display:flex;
+    flex-direction:column;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+.owner-image-container{
+    width:503px;
+    height:174px;
+    border-radius:8px;
+    border: 1px solid rgba(219, 219, 219, 1);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:16px;
+}
+.owner-details{
+    width:450px;
+    height:72px;
+    display:flex;
+    gap:14px;
+}
+.owner{
+    border-radius:50%;
+    object-fit:cover;
+    overflow:hidden;
+}
+.agent-description{
+    display:flex;
+    flex-direction:column;
+    width:200px;
+    height:72px;
+    justify-content:center;
+    align-items:flex-start;
+    gap:4px;
+}
+.agent-name{
+    /*width:142px;*/
+    width:200px;
+    height:19px;
+    font-size:16px;
+}
+.agent{
+    font-size:16px;
+    color:rgba(128, 138, 147, 1);
+}
+.email-phone{
+    display:flex;
+    flex-direction:column;
+    width:450px;
+    height:38px;
+}
+.email{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    font-size:14px;
+    color:rgba(128, 138, 147, 1);
+    font-weight:400;
+}
+.phone{
+    display:flex;
+    align-items:center;
+    gap:5px;
+    font-size:14px;
+    color:rgba(128, 138, 147, 1);
+    font-weight:400;
+}
+.delete-listing-btn{
+    width:150px;
+    height:37px;
+    border: 1px solid rgba(103, 110, 118, 1);
+    color:rgba(128, 138, 147, 1);
+    border-radius:8px;
+    transition:all;
+    transition-duration:0.2s;
+    transition-timing-function:ease-in-out;
+    font-size:14px;
+    background-color:white;
+    font-weight:bold;
+}
+.delete-listing-btn:hover{
+    background: rgba(128, 138, 147, 1);
+    color:white;
+}
+
+/*slider*/
+.slider-section{
+    margin-top:53px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:1596px;
+    height:826px;
+    gap:52px;
+}
+.common-rental-properties{
+    width:1596px;
+    height:38px;
+    font-weight:bold;
+    color:black;
+}
+.carousel{
+    width:1596px;
+    height:455px;
+    border:1px solid;
+}
+.left{
+    position:absolute;
+    top:1325px;
+    left:97px;
+    cursor:pointer;
+}
+.right{
+    position:absolute;
+    top:1325px;
+    left:1763px;
+    cursor:pointer;
+}
