@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles3.css">
+</head>
+<body>
+    <header>
+        <div class="redberry-logo">
+            <img src="images/LOGO-02 3.jpg" class="redberry-img">
+        </div>
+    </header>
+    <main>
+        <section class="filtering-system">
+            <!--tags bar-->
+            <ul class="filter-categories">
+                <li class="region-tag options">
+                    <p>რეგიონი</p>
+                    <img src="images/arrow_down.jpg" class="filter-hover-img">
+                </li>
+                <li class="price-category-tag options">
+                    <p>საფასო კატეგორია</p>
+                    <img src="images/arrow_down.jpg" class="filter-hover-img">
+                </li>
+                <li class="area-tag options">
+                    <p>ფართობი</p>
+                    <img src="images/arrow_down.jpg" class="filter-hover-img">
+                </li>
+                <li class="bed-count-tag options">
+                    <p>საძინებლების რაოდენობა</p>
+                    <img src="images/arrow_down.jpg" class="filter-hover-img">
+                </li>
+            </ul>
+            <div class="list-agent-btns">
+                <button class="add-listing-btn">+ ლისტინგის დამატება</button>
+                <button class="add-agent-btn">+ აგენტის დამატება</button>
+            </div>
+            <!--selection-->
+            <!--regions-->
+            <div class="region-container filter-category">
+                <div class="cities">
+                    <h4 class="by-region">რეგიონის მიხედვით</h4>
+                    <div class="region-names">
+                        <div class="registered-city-names">
+                            <input type="checkbox" id="12" name="შიდა ქართლი" value="შიდა ქართლი">
+                            <label for="12">ქართლი</label>
+                        </div>
+                        <div class="registered-city-names">
+                            <input type="checkbox" id="3" name="გურია" value="გურია">
+                            <label for="3">გურია</label>
+                        </div>
+                        <div class="registered-city-names">
+                            <input type="checkbox" id="2" name="აჭარა" value="აჭარა">
+                            <label for="2">აჭარა</label>
+                        </div>
+                        <div class="registered-city-names">
+                            <input type="checkbox" id="6" name="კახეთი" value="კახეთი">
+                            <label for="6">კახეთი</label>
+                        </div>
+                        <div class="registered-city-names">
+                            <input type="checkbox" id="8" name="რაჭა-ლეჩხუმი" value="რაჭა-ლეჩხუმი">
+                            <label for="8">რაჭა</label>
+                        </div>
+                        <div class="registered-city-names">
+                            <input type="checkbox" id="4" name="სვანეთი" value="სვანეთი">
+                            <label for="4">სვანეთი</label>
+                        </div>
+                        <div class="registered-city-names">
+                            <input type="checkbox" id="4" name="იმერეთი" value="იმერეთი">
+                            <label for="4">იმერეთი</label>
+                        </div>
+                        <div class="registered-city-names">
+                            <input type="checkbox" id="4" name="ლეჩხუმი" value="ლეჩხუმი">
+                            <label for="4">ლეჩხუმი</label>
+                        </div>
+                        <div class="registered-city-names">
+                            <input type="checkbox" id="4" name="მცხეთა-მთიანეთი" value="მცხეთა-მთიანეთი">
+                            <label for="4">მცხეთა-მთიანეთი</label>
+                        </div>
+                        <div class="registered-city-names">
+                            <input type="checkbox" id="4" name="სამეგრელო" value="სამეგრელო">
+                            <label for="4">სამეგრელო</label>
+                        </div>
+                        <div class="registered-city-names">
+                            <input type="checkbox" id="4" name="სამცხე-ჯავახეთი" value="სამცხე-ჯავახეთი">
+                            <label for="4">სამცხე-ჯავახეთი</label>
+                        </div>
+                        <div class="registered-city-names">
+                            <input type="checkbox" id="4" name="თბილისი" value="თბილისი">
+                            <label for="4">თბილისი</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="region-btn-container">
+                    <button class="region-btn">არჩევა</button>
+                </div>
+            </div>
+            <!--price-category-->
+            <div class="price-container filter-category">
+                <div class="prices">
+                    <h4>ფასის მიხედვით</h4>
+                    <div class="min-max-price-container">
+                        <p class="min-price">დან&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;₾</p>
+                        <p class="max-price">დან&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;₾</p>
+                    </div>
+                    <div class="price-selection">
+                        <div class="min-price-list">
+                            <h5>მინ. ფასი</h5>
+                            <ul class="min-prices">
+                                <li class="min-list-item">
+                                    <p class="min-price-item">500</p>
+                                    <span>₾</span>
+                                </li>
+                                <li class="min-list-item">
+                                    <p class="min-price-item">20000</p>
+                                    <span>₾</span>
+                                </li>
+                                <li class="min-list-item">
+                                    <p class="min-price-item">50000</p>
+                                    <span>₾</span>
+                                </li>
+                                <li class="min-list-item">
+                                    <p class="min-price-item">70000</p>
+                                    <span>₾</span>
+                                </li>
+                                <li class="min-list-item">
+                                    <p class="min-price-item">100000</p>
+                                    <span>₾</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="max-price-list">
+                            <h5>მაქს. ფასი</h5>
+                            <ul class="max-prices">
+                                <li class="max-list-item">
+                                    <p class="max-price-item">500</p>
+                                    <span>₾</span>
+                                </li>
+                                <li class="max-list-item">
+                                    <p class="max-price-item">20000</p>
+                                    <span>₾</span>
+                                </li>
+                                <li class="max-list-item">
+                                    <p class="max-price-item">50000</p>
+                                    <span>₾</span>
+                                </li>
+                                <li class="max-list-item">
+                                    <p class="max-price-item">70000</p>
+                                    <span>₾</span>
+                                </li>
+                                <li class="max-list-item">
+                                    <p class="max-price-item">100000</p>
+                                    <span>₾</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="price-btn-container">
+                    <button class="price-btn">არჩევა</button>
+                </div>
+            </div>
+            <!--area-category-->
+            <div class="area-container filter-category">
+                <div class="areas">
+                    <h4>ფართობის მიხედვით</h4>
+                    <div class="min-max-area-container">
+                        <p class="min-area">დან&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;მ²</p>
+                        <p class="max-area">დან&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;მ²</p>
+                    </div>
+                    <div class="area-selection">
+                        <div class="min-area-list">
+                            <h5>მინ. მ²</h5>
+                            <ul class="min-areas">
+                                <li class="min-list-item">
+                                    <p class="min-area-item">20</p>
+                                    <span>მ²</span>
+                                </li>
+                                <li class="min-list-item">
+                                    <p class="min-area-item">50</p>
+                                    <span>მ²</span>
+                                </li>
+                                <li class="min-list-item">
+                                    <p class="min-area-item">70</p>
+                                    <span>მ²</span>
+                                </li>
+                                <li class="min-list-item">
+                                    <p class="min-area-item">80</p>
+                                    <span>მ²</span>
+                                </li>
+                                <li class="min-list-item">
+                                    <p class="min-area-item">100</p>
+                                    <span>მ²</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="max-area-list">
+                            <h5>მაქს. მ²</h5>
+                            <ul class="max-areas">
+                                <li class="max-list-item">
+                                    <p class="max-area-item">20</p>
+                                    <span>მ²</span>
+                                </li>
+                                <li class="max-list-item">
+                                    <p class="max-area-item">50</p>
+                                    <span>მ²</span>
+                                </li>
+                                <li class="max-list-item">
+                                    <p class="max-area-item">70</p>
+                                    <span>მ²</span>
+                                </li>
+                                <li class="max-list-item">
+                                    <p class="max-area-item">80</p>
+                                    <span>მ²</span>
+                                </li>
+                                <li class="max-list-item">
+                                    <p class="max-area-item">100</p>
+                                    <span>მ²</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="area-btn-container">
+                    <button class="area-btn">არჩევა</button>
+                </div>
+            </div>
+            <!--bed-count-category-->
+            <div class="bed-count-container filter-category">
+                <div class="beds">
+                    <h5>საძინებლების რაოდენობა</h5>
+                    <div class="bed-count">
+                        <ul class="bed-room-choice">
+                            <li class="bed">2</li>
+                            <li class="bed">3</li>
+                            <li class="bed">4</li>
+                            <li class="bed">5</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bed-count-btn-container">
+                    <button class="bed-count-btn">არჩევა</button>
+                </div>
+            </div>
+        </section>
+        <div class="tags-container"></div>
+        <section class="rental-display">
+            <div class="real-estate-container">
+                <div class="real-estate-image-container">
+                    <img src="images/house1.jpg" class="real-estate-house-img">
+                    <p class="rental-category">იყიდება</p>
+                </div>
+                <div class="real-estate-data-container">
+                    <div class="price-address-data">
+                        <h2>80 000</h2>
+                        <div class="address-icons">
+                            <img src="images/location-marker.jpg" width="20" height="20">
+                            <p class="address">qucha 123</p>
+                        </div>
+                    </div>
+                    <div class="price-address-icons">
+                        <div class="bed-count-icon-data">
+                            <img src="images/bed.jpg">
+                            <p class="bed-count-data">2</p>
+                        </div>
+                        <div class="area-icon-data">
+                            <img src="images/Vector (3).jpg">
+                            <p class="area-data">1313</p>
+                        </div>
+                        <div class="zip-code-icon-data">
+                            <img src="images/Vector (4).jpg">
+                            <p class="zip-code-data">2123</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+    <script src="script4.js"></script>
+</body>
+</html>
