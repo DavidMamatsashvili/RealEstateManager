@@ -250,10 +250,10 @@ header{
     font-weight:bold;
     color:black;
 }
-.carousel{
+.carousel-wrapper{
     width:1596px;
     height:455px;
-    border:1px solid;
+    overflow:hidden;
 }
 .left{
     position:absolute;
@@ -266,4 +266,110 @@ header{
     top:1325px;
     left:1763px;
     cursor:pointer;
+}
+.carousel{
+    width:1596px;
+    height:455px;
+    display:flex;
+    gap:20px;
+    transition: transform 0.3s ease;
+}
+
+/*rental-unit*/
+.real-estate-container{
+    min-width:384px;
+    min-height:455px;
+    display:flex;
+    flex-direction:column;
+    background: rgba(255, 255, 255, 1);
+    border:1px solid rgba(219, 219, 219, 1);
+    border-radius:14px;
+    transition:all;
+    transition-timing-function: ease-in-out;
+    transition-duration:0.5s;
+    cursor:pointer;
+}
+.real-estate-image-container{
+    width:384px;
+    height:307px;
+    overflow:hidden;
+    position:relative;
+}
+.real-esate-house-img{
+    object-fit:cover;
+}
+.rental-category{
+    position:absolute;
+    width:90px;
+    height:26px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    top:23px;
+    left:23px;
+    border-radius:15px;
+    color:white;
+    font-weight:bold;
+    background: rgba(2, 21, 38, 0.5);
+    font-size:12px;
+}
+.real-estate-data-container{
+    width:384px;
+    height:148px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    gap:6px;
+    padding:25px;
+}
+.price-address-data{
+    width:334px;
+    height:60px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    gap:4px;
+}
+.price-address-data h2{
+    font-size:28px;
+    font-weight:bold;
+}
+.address-icons{
+    display:flex;
+}
+.address{
+    color:rgba(2, 21, 38, 0.7);
+}
+
+.price-address-icons{
+    margin-top:20px;
+    width:214px;
+    height:24px;
+    display:flex;
+    justify-content:space-between;
+}
+.bed-count-icon-data{
+    display:flex;
+    width:37px;
+    height:19px;
+    justify-content:space-between;
+    align-items:center;
+    color:rgba(2, 21, 38, 0.7);
+}
+.area-icon-data{
+    width:59px;
+    height:19px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:rgba(2, 21, 38, 0.7);
+}
+.zip-code-icon-data{
+    width:54px;
+    height:19px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:rgba(2, 21, 38, 0.7);
 }
