@@ -967,25 +967,54 @@ for (let i = 0; i < add_agent_name_form.length; i++) {
 add_agent_name_form.forEach((element,index)=>{
     element.addEventListener("input",()=>{
         const text=element.value.trim();
-        if((index==0 || index==1) && text.length<2){
+        if(index==0 && text.length<2){
             element.style.border="1px solid red";
-            element.classList.add("add-agent-form-container-check");
+            let cont=document.querySelector(".agent-name");
+            cont.classList.remove("add-agent-form-container-symbols");
+            cont.classList.add("add-agent-form-container-check-symbols");
         }
-        else if((index==0 || index==1) && text.length>=2){
+        else if(index==0 && text.length>=2){
             element.style.border="1px solid";
+            let cont=document.querySelector(".agent-name");
+            cont.classList.remove("add-agent-form-container-check-symbols");
+            cont.classList.add("add-agent-form-container-symbols")
+        }
+        if(index==1 && text.length<2){
+            element.style.border="1px solid red";
+            let cont=document.querySelector(".agent-surname");
+            cont.classList.remove("add-agent-form-container-symbols");
+            cont.classList.add("add-agent-form-container-check-symbols");
+        }
+        else if(index==1 && text.length>=2){
+            element.style.border="1px solid";
+            let cont=document.querySelector(".agent-surname");
+            cont.classList.remove("add-agent-form-container-check-symbols");
+            cont.classList.add("add-agent-form-container-symbols")
         }
         if(index==2 && !text.includes("@redberry.ge")){
             element.style.border="1px solid red";
+            let cont=document.querySelector(".agent-gmail");
+            cont.classList.remove("add-agent-form-container-gmail");
+            cont.classList.add("add-agent-form-container-check-gmail");
         }
         else if(index==2 && text.includes("@redberry.ge")){
             element.style.border="1px solid";
+            let cont=document.querySelector(".agent-gmail");
+            cont.classList.remove("add-agent-form-container-check-gmail");
+            cont.classList.add("add-agent-form-container-gmail");
         }
 
         if(index==3 && !/^\d+$/.test(text)){
             element.style.border="1px solid red";
+            let cont=document.querySelector(".agent-phone");
+            cont.classList.remove("add-agent-form-container-phone");
+            cont.classList.add("add-agent-form-container-check-phone");
         }
         else if(index==3 && /^\d+$/.test(text)){
             element.style.border="1px solid";
+            let cont=document.querySelector(".agent-phone");
+            cont.classList.remove("add-agent-form-container-check-phone");
+            cont.classList.add("add-agent-form-container-phone");
         }
        
     })
@@ -994,7 +1023,11 @@ add_agent_name_form.forEach((element,index)=>{
 const add_agent_form=document.querySelector(".add-agent-forms");
 add_agent_form.addEventListener("submit",(e)=>{
     e.preventDefault();
-    const forms=new FormData(add_agent_form);
+    let img=document.querySelector("#add-agent-image").value;
+    let file=new FileReader(img);
+    file.readAsDataURL(file);
+    //const forms=new FormData(add_agent_form);
+    const forms=new FormData(file.result);
     for(let obj of forms){
         console.log(obj[0]+" "+obj[1]);
     }
