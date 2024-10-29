@@ -91,7 +91,7 @@ getData();
 
 const go_back_btn = document.querySelector(".go-back-btn");
 go_back_btn.addEventListener("click",()=>{
-    window.location.href='index4.html';
+    window.location.href='mainSection.html';
 })
 
 

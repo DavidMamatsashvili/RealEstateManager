@@ -900,7 +900,7 @@ function displaySavedData() {
                     localStorage.setItem("house", localStorage.getItem(key));
                 }
             }
-            window.location.href = 'index5.html';
+            window.location.href = 'rentalUnit.html';
         })
     })
 
