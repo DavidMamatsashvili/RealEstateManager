@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles3.css">
+    <link rel="stylesheet" href="mainSection.css">
+    <style></style>
 </head>
+
 <body>
     <header>
         <div class="redberry-logo">
@@ -44,7 +47,7 @@
                     <h4 class="by-region">რეგიონის მიხედვით</h4>
                     <div class="region-names">
                         <div class="registered-city-names">
-                            <input type="checkbox" id="12" name="შიდა ქართლი" value="შიდა ქართლი">
+                            <input type="checkbox" id="12" name="ქართლი" value="ქართლი">
                             <label for="12">ქართლი</label>
                         </div>
                         <div class="registered-city-names">
@@ -60,7 +63,7 @@
                             <label for="6">კახეთი</label>
                         </div>
                         <div class="registered-city-names">
-                            <input type="checkbox" id="8" name="რაჭა-ლეჩხუმი" value="რაჭა-ლეჩხუმი">
+                            <input type="checkbox" id="8" name="რაჭა" value="რაჭა">
                             <label for="8">რაჭა</label>
                         </div>
                         <div class="registered-city-names">
@@ -102,8 +105,12 @@
                 <div class="prices">
                     <h4>ფასის მიხედვით</h4>
                     <div class="min-max-price-container">
-                        <p class="min-price">დან&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;₾</p>
-                        <p class="max-price">დან&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;₾</p>
+                        <p class="min-price">
+                            დან&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;₾
+                        </p>
+                        <p class="max-price">
+                            დან&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;₾
+                        </p>
                     </div>
                     <div class="price-selection">
                         <div class="min-price-list">
@@ -167,8 +174,12 @@
                 <div class="areas">
                     <h4>ფართობის მიხედვით</h4>
                     <div class="min-max-area-container">
-                        <p class="min-area">დან&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;მ²</p>
-                        <p class="max-area">დან&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;მ²</p>
+                        <p class="min-area">
+                            დან&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;მ²
+                        </p>
+                        <p class="max-area">
+                            დან&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;მ²
+                        </p>
                     </div>
                     <div class="area-selection">
                         <div class="min-area-list">
@@ -247,6 +258,12 @@
         </section>
         <div class="tags-container"></div>
         <section class="rental-display">
+            <!--
+            <button>
+                <a href="test.html">click me</a>
+            </button>
+            -->
+            <!--
             <div class="real-estate-container">
                 <div class="real-estate-image-container">
                     <img src="images/house1.jpg" class="real-estate-house-img">
@@ -276,9 +293,51 @@
                     </div>
                 </div>
             </div>
+            
+            -->
         </section>
+        <div class="add-agent-container">
+            <div class="add-agent-overlay"></div>
+            <div class="add-agent-modal">
+                <div class="add-agent-modal-wrapper">
+                    <h2 class="add-agent-header">აგენტის დამატება</h2>
+                    <form action="" class="add-agent-forms">
+                        <div class="add-agent-forms-container-wrapper">
+                            <div class="add-agent-form-container add-agent-form-container-symbols">
+                                <label for="add-agent-name-form">სახელი*</label>
+                                <input type="text" id="add-agent-name-form" name="name" class="add-agent-inputs">
+                            </div>
+                            <div class="add-agent-form-container add-agent-form-container-symbols">
+                                <label for="add-agent-surname-form">გვარი*</label>
+                                <input type="text" id="add-agent-surname-form" name="surname" class="add-agent-inputs">
+                            </div>
+                            <div class="add-agent-form-container add-agent-form-container-gmail">
+                                <label for="add-agent-gmail-form">ელ-ფოსტა*</label>
+                                <input type="gmail" id="add-agent-gmail-form" name="gmail" class="add-agent-inputs">
+                            </div>
+                            <div class="add-agent-form-container add-agent-form-container-phone">
+                                <label for="add-agent-gmail-form">ტელეფონის ნომერი</label>
+                                <input type="tel" id="add-agent-gmail-form" pattern="[0-9]{3}[0-9]{2}[0-9]{2}[0-9]{2}" name="phone" class="add-agent-inputs">
+                            </div>
+                        </div>
+                        <div class="add-agent-form-image-input">
+                            <h3>ატვირთეთ ფოტო</h3>
+                            <label for="add-agent-image" class="upload-image">
+                                <img src="house/plus-circle.jpg" alt="upload">
+                            </label>
+                            <input type="file" id="add-agent-image" name="image">
+                        </div>
+                        <div class="add-agent-btns">
+                            <button class="add-agent-cancel">გაუქმება</button>
+                            <button type="submit" class="add-agent-submit">დაამატე აგენტი</button>
+                        </div>
+                    </form>
+                </div>
+            </div><!--dialog-->
+        </div>
     </main>
     <footer></footer>
-    <script src="script4.js"></script>
+    <script src="mainSection.js"></script>
 </body>
+
 </html>

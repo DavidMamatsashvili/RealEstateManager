@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="addListingStyle.css">
+</head>
+<body>
+    <header>
+        <div class="redberry-logo">
+            <img src="images/LOGO-02 3.jpg" class="redberry-img">
+        </div>
+    </header>
+    <main>
+        <section class="add-listing-section">
+            <h1 class="add-listing-header">ლისტინგის დამატება</h1>
+            <div class="add-listing-container">
+                <form class="add-listing-form-container">
+
+                    <div class="deal-container">
+                        <label for="deal-type" class="deal-type-label">გარიგების ტიპი</label>
+                        <div class="deal-type-radios">
+                            <input type="radio" name="deal-type"  class="for-sale">
+                            <input type="radio" name="deal-type"  class="rental">
+                        </div>
+                    </div>
+
+                    <div class="location-container">
+                        <label class="location-label">მდებარეობა</label>
+                        <div class="location-details-container">
+                            <div class="address details">
+                                <label for="address">მისამართი</label>
+                                <input type="text" id="address" name="address">
+                            </div>
+                            <div class="zip-code details">
+                                <label for="zip-code">საფოსტო ინდექსი</label>
+                                <input type="text" id="zip-code" name="zip-code">
+                            </div>
+                            <div class="region details">
+                                <label for="region">რეგიონი</label>
+                                <input type="text" id="region" name="region">
+                            </div>
+                            <div class="city details">
+                                <label for="city">ქალაქი</label>
+                                <input type="text" id="city" name="city">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flat-details-container">
+                        <label class="flat-details-label">ბინის დეტალები</label>
+                        <div class="price-area-bedcount">
+                            <div class="price details">
+                                <label for="price">ფასი</label>
+                                <input type="text" id="price" name="price">
+                            </div>
+                            <div class="area details">
+                                <label for="area">ფართობი</label>
+                                <input type="text" id="area" name="area">
+                            </div>
+                            <div class="bed-count details">
+                                <label for="bed-count">საძინებლების რაოდენობა</label>
+                                <input type="text" id="bed-count" name="bed-count">
+                            </div>
+                        </div>
+                        <div class="description-container">
+                            <label for="description">აღწერა</label>
+                            <input type="text" id="description" class="description-input">
+                        </div>
+                        <div class="image-container">
+                            <h2 class="image-header">ატვირთეთ ფოტო</h2>
+                            <label for="image-upload">
+                                <img src="house/plus-circle.jpg" alt="upload">
+                            </label>
+                            <input type="file" id="image-upload" name="image">
+                        </div>
+                    </div>
+
+                    <div class="agent-container">
+                        <h2 class="choose-agent-header">აგენტი</h2>
+                        <div class="choose-agent-container">
+                            <label for="choose-agent">აირჩიე აგენტი</label>
+                            <input type="text" id="choose-agent">
+                        </div>
+                    </div>
+                    <div class="add-listing-btns">
+                        <button class="add-listing-cancel-btn">გაუქმება</button>
+                        <button class="add-listing-submit-btn">დაამატე ლისტინგი</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

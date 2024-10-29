@@ -1,0 +1,299 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+header{
+    width:100%;
+    height:100px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-bottom:1px solid rgba(219, 219, 219, 1);
+}
+.redberry-logo{
+    height:100px;
+    width:1596px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+}
+.redberry-img{
+    cursor:pointer;
+}
+main{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.add-listing-section{
+    height:1447px;
+    width:790px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    margin-bottom:87px;
+}
+.add-listing-header{
+    width:790px;
+    height:138px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    
+}
+
+/*listing-details-wrapper*/
+.add-listing-container{
+    width:790px;
+    height:1348px;
+}
+.add-listing-form-container{
+    width:790px;
+    height:1348px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+/*deal-type*/
+.deal-container{
+    width:266px;
+    height:45px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+.deal-type-label{
+    font-size:16px;
+    font-weight:bold;
+}
+.deal-type-radios{
+    display:flex;
+    width:266px;
+    height:17px;
+    gap:156px;
+}
+.for-sale{
+    position:relative;
+    font-size:14px;
+}
+.for-sale::after{
+    position:absolute;
+    left:18px;
+    content:"იყიდება";
+    
+}
+.rental{
+    position:relative;
+    font-size:14px;
+}
+.rental::after{
+    position:absolute;
+    left:18px;
+    content:"ქირავდება";
+}
+
+
+/*location-container*/
+.location-container{
+    width:790px;
+    height:232px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+.location-details-container{
+    width:790px;
+    height:190px;
+    display:grid;
+    grid-template-columns:repeat(2,384px);
+    grid-gap:15px;
+    row-gap:24px;
+}
+.location-label{
+    font-size:16px;
+    font-weight:bold;
+}
+.details{
+    width:384px;
+    height:83px;
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+}
+.details input{
+    width:384px;
+    height:42px;
+    border-radius:6px;
+    padding:10px;
+    border: 1px solid rgba(128, 138, 147, 1);
+    outline:none;
+    font-size:14px;
+}
+.address::after{
+    content:"მინიმუმ 2 სიმბოლო";
+    font-size:14px;
+}
+.zip-code::after{
+    content:"მხოლოდ რიცხვები";
+    font-size:14px;
+}
+
+
+/*flat-details*/
+.flat-details-container{
+    width:790px;
+    height:595px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+.flat-details-label{
+    font-size:16px;
+    font-weight:bold;
+}
+.price-area-bedcount{
+    width:790px;
+    height:190px;
+    display:grid;
+    grid-template-columns:repeat(2,384px);
+    grid-gap:17px;
+    row-gap:24px;
+}
+
+.description-container{
+    display:flex;
+    flex-direction:column;
+    width:788px;
+    height:178px;
+    gap:5px;
+}
+.description-input{
+    height:135px;
+    border-radius:6px;
+    padding:10px;
+    border: 1px solid rgba(128, 138, 147, 1);
+    outline:none;
+}
+.image-container{
+    width:788px;
+    height:147px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+.image-header{
+    font-size:16px;
+    font-weight:bold;
+}
+.image-container label{
+    width:788px;
+    height:120px;
+    border: 1px solid rgba(45, 54, 72, 1);
+    border-radius:6px;
+    border-style:dashed;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+}
+.image-container input{
+    display:none;
+}
+.price::after{
+    content:"მხოლოდ რიცხვები";
+    font-size:14px;
+}
+.area::after{
+    content:"მხოლოდ რიცხვები";
+    font-size:14px;
+}
+
+
+
+/*agent-container*/
+.agent-container{
+    width:790px;
+    height:99px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+.choose-agent-header{
+    font-size:16px;
+}
+.choose-agent-container{
+    width:384px;
+    height:64px;
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+}
+.choose-agent-container label{
+    font-size:14px;
+    font-weight:bold;
+}
+.choose-agent-container input{
+    width:384px;
+    height:42px;
+    border-radius:6px;
+    border: 1px solid rgba(128, 138, 147, 1);
+    outline:none;
+}
+.description-container::after{
+    content:"მინიმუმ 5 სიტყვა";
+    font-size:14px;
+}
+
+
+/*btns*/
+.add-listing-btns{
+    width:790px;
+    height:47px;
+    display:flex;
+    justify-content:flex-end;
+    gap:15px;
+}
+.add-listing-cancel-btn{
+    width:103px;
+    height:47px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border: 1px solid rgba(249, 59, 29, 1);
+    font-weight:bold;
+    color:rgba(249, 59, 29, 1);
+    border-radius:10px;
+    background-color:white;
+    transition:all;
+    transition-timing-function:ease-in-out;
+    transition-duration:0.1s;
+    font-weight:bold;
+}
+.add-listing-cancel-btn:hover{
+    background-color:rgba(249, 59, 29, 1);
+    color:white;
+}
+.add-listing-submit-btn{
+    width:161px;
+    height:47px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-color:rgba(249, 59, 29, 1);
+    font-weight:bold;
+    color:white;
+    border-radius:10px;
+    transition:all;
+    transition-timing-function:ease-in-out;
+    transition-duration:0.1s;
+    border:none;
+    font-weight:bold;
+}
+.add-listing-submit-btn:hover{
+    background-color:white;
+    color:rgba(249, 59, 29, 1);
+    border:1px solid rgba(249, 59, 29, 1);
+}

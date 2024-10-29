@@ -626,6 +626,10 @@ header{
     background: rgba(255, 255, 255, 1);
     border:1px solid rgba(219, 219, 219, 1);
     border-radius:14px;
+    transition:all;
+    transition-timing-function: ease-in-out;
+    transition-duration:0.5s;
+    cursor:pointer;
 }
 .real-estate-image-container{
     width:384px;
@@ -726,3 +730,268 @@ header{
 .bed-count-identificator{
     
 }
+
+.real-estate-container:hover{
+    scale:1.1;
+    transition:scale;
+    transition-duration:0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+/*listing*/
+.add-agent-btn{
+    transition:all;
+    transition-duration:0.1s;
+    transition-timing-function:ease-in;
+}
+.add-agent-btn:hover{
+    background: rgba(249, 59, 29, 1);
+    color:white;
+}
+.add-agent-container{
+    position:absolute;
+    z-index: -1;
+    /*z-index:3;*/
+    top: 0;
+    left:0;
+    width:100%;
+    height:100vh;
+    border:1px solid;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.add-agent-modal{
+    width:1009px;
+    height:784px;
+    background: rgba(255, 255, 255, 1);
+    position:absolute;
+    top:10%;
+    left:22%;
+    z-index:9;
+    box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.08);
+    border-radius:10px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-around;
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-200px);
+    visibility:hidden;
+    transition:all;
+    transition-duration:0.4s;
+    transition-timing-function: ease-in-out;
+}
+.add-agent-active{
+    visibility: visible;
+    transform: translateY(0px);
+}
+.add-agent-overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:7;
+    visibility: hidden;
+    /*backdrop-filter: blur(10px);*/
+    transition:all;
+    transition-duration:0.7s;
+    transition-timing-function: ease-in-out;
+}
+.blur{
+    visibility: visible;
+    backdrop-filter: blur(10px);
+    background: rgba(2, 21, 38, 0.34);
+
+}
+
+.add-agent-modal-wrapper{
+    width:799px;
+    height:663px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    align-items:center;
+}
+.add-agent-header{
+    width:294px;
+    height:38px;
+    font-weight:bold;
+}
+.add-agent-forms{
+    width:799px;
+    height:511px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+.add-agent-forms-container-wrapper{
+    width:799px;
+    height:226px;
+    display:grid;
+    grid-template-columns:repeat(2,384px);
+    gap:28px;
+}
+.add-agent-form-container{
+    width:384px;
+    height:85px;
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+}
+.add-agent-form-container input{
+    width:384px;
+    height:42px;
+    border-radius:6px;
+    border:1px solid;
+    padding:10px;
+    outline:none;
+}
+.add-agent-form-container label{
+    font-weight:bold;
+}
+
+/**/
+.add-agent-form-container-symbols::after{
+    content:"მინიმუმ ორი სიმბოლო";
+    width:178px;
+    height:17px;
+    font-size:14px;
+}
+.add-agent-form-container-gmail::after{
+    content:"გამოიყენეთ @redberry.ge ფოსტა";
+    width:384px;
+    height:17px;
+    font-size:14px;
+}
+.add-agent-form-container-phone::after{
+    content:"მხოლოდ რიცხვები";
+    width:178px;
+    height:17px;
+    font-size:14px;
+}
+
+.add-agent-form-container-check-symbols::after{
+    content:"ჩაწერეთ ვალიდური მონაცემები";
+    width:178px;
+    height:17px;
+    font-size:14px;
+    color:red;
+}
+.add-agent-form-container-check-gmail::after{
+    content:"ჩაწერეთ ვალიდური მონაცემები";
+    width:178px;
+    height:17px;
+    font-size:14px;
+    color:red;
+}
+.add-agent-form-container-check-phone::after{
+    content:"ჩაწერეთ ვალიდური მონაცემები";
+    width:178px;
+    height:17px;
+    font-size:14px;
+    color:red;
+}
+/*.add-agent-form-container:nth-child(1)::after{
+    content:"მინიმუმ ორი სიმბოლო";
+    width:178px;
+    height:17px;
+    font-size:14px;
+}
+.add-agent-form-container:nth-child(2)::after{
+    content:"მინიმუმ ორი სიმბოლო";
+    width:178px;
+    height:17px;
+    font-size:14px;
+}
+.add-agent-form-container:nth-child(3)::after{
+    content:"გამოიყენეთ @redberry.ge ფოსტა";
+    width:384px;
+    height:17px;
+    font-size:14px;
+}
+.add-agent-form-container:nth-child(4)::after{
+    content:"მხოლოდ რიცხვები";
+    width:178px;
+    height:17px;
+    font-size:14px;
+}*/
+
+/**/
+.add-agent-form-image-input{
+    width:799px;
+    height:144px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+.add-agent-form-image-input h3{
+    font-weight:bold;
+    font-size:14px;
+}
+input[type="file"]{
+    display:none;
+}
+.upload-image{
+    width:799px;
+    height:120px;
+    border:2px solid;
+    border-style:dashed;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+}
+
+.add-agent-btns{
+    width:799px;
+    height:47px;
+    display:flex;
+    justify-content:flex-end;
+    gap:15px;
+}
+.add-agent-cancel{
+    width:103px;
+    height:47px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border: 1px solid rgba(249, 59, 29, 1);
+    font-weight:bold;
+    color:rgba(249, 59, 29, 1);
+    border-radius:10px;
+    background-color:white;
+    transition:all;
+    transition-timing-function:ease-in-out;
+    transition-duration:0.1s;
+    font-weight:bold;
+}
+.add-agent-cancel:hover{
+    background-color:rgba(249, 59, 29, 1);
+    color:white;
+}
+.add-agent-submit{
+    width:161px;
+    height:47px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background-color:rgba(249, 59, 29, 1);
+    font-weight:bold;
+    color:white;
+    border-radius:10px;
+    transition:all;
+    transition-timing-function:ease-in-out;
+    transition-duration:0.1s;
+    border:none;
+    font-weight:bold;
+}
+.add-agent-submit:hover{
+    background-color:white;
+    color:rgba(249, 59, 29, 1);
+    border:1px solid rgba(249, 59, 29, 1);
+}
+.active{
+    display:block;
+}
+
