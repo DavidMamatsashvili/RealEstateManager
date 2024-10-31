@@ -303,29 +303,29 @@
                     <h2 class="add-agent-header">აგენტის დამატება</h2>
                     <form action="" class="add-agent-forms">
                         <div class="add-agent-forms-container-wrapper">
-                            <div class="add-agent-form-container add-agent-form-container-symbols">
+                            <div class="add-agent-form-container add-agent-form-container-symbols agent-name">
                                 <label for="add-agent-name-form">სახელი*</label>
                                 <input type="text" id="add-agent-name-form" name="name" class="add-agent-inputs">
                             </div>
-                            <div class="add-agent-form-container add-agent-form-container-symbols">
+                            <div class="add-agent-form-container add-agent-form-container-symbols agent-surname">
                                 <label for="add-agent-surname-form">გვარი*</label>
                                 <input type="text" id="add-agent-surname-form" name="surname" class="add-agent-inputs">
                             </div>
-                            <div class="add-agent-form-container add-agent-form-container-gmail">
+                            <div class="add-agent-form-container add-agent-form-container-gmail agent-gmail">
                                 <label for="add-agent-gmail-form">ელ-ფოსტა*</label>
-                                <input type="gmail" id="add-agent-gmail-form" name="gmail" class="add-agent-inputs">
+                                <input type="email" id="add-agent-gmail-form" name="email" class="add-agent-inputs">
                             </div>
-                            <div class="add-agent-form-container add-agent-form-container-phone">
+                            <div class="add-agent-form-container add-agent-form-container-phone agent-phone">
                                 <label for="add-agent-gmail-form">ტელეფონის ნომერი</label>
-                                <input type="tel" id="add-agent-gmail-form" pattern="[0-9]{3}[0-9]{2}[0-9]{2}[0-9]{2}" name="phone" class="add-agent-inputs">
+                                <input type="tel" id="add-agent-phone-form" pattern="[0-9]{3}[0-9]{2}[0-9]{2}[0-9]{2}" name="phone" class="add-agent-inputs">
                             </div>
                         </div>
-                        <div class="add-agent-form-image-input">
+                        <div class="add-agent-form-image-input add-agent-form-container">
                             <h3>ატვირთეთ ფოტო</h3>
                             <label for="add-agent-image" class="upload-image">
                                 <img src="house/plus-circle.jpg" alt="upload">
                             </label>
-                            <input type="file" id="add-agent-image" name="image">
+                            <input type="file" id="add-agent-image" name="avatar" class="add-agent-inputs">
                         </div>
                         <div class="add-agent-btns">
                             <button class="add-agent-cancel">გაუქმება</button>
@@ -337,7 +337,7 @@
         </div>
     </main>
     <footer></footer>
-    <script src="mainSection.js"></script>
+    <script type="module" src="mainSection.js"></script>
 </body>
 
 </html>

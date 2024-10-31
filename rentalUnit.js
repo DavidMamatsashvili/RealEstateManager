@@ -5,7 +5,6 @@ let house=JSON.parse(localStorage.getItem("house"));
 let id = house.id;
 
 
-
 async function getData(){
     try{
         const fetch_data = await fetch(`https://api.real-estate-manager.redberryinternship.ge/api/real-estates/${id}`,{
@@ -124,10 +123,6 @@ function slideRight() {
 }
 leftButton.addEventListener("click", slideLeft);
 rightButton.addEventListener("click", slideRight);
-
-
-
-
 
 
 
