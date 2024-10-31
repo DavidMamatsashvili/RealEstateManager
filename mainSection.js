@@ -1,9 +1,6 @@
-//caching
-
 const filter_hover_img = document.querySelectorAll(".filter-hover-img");
 const options = document.querySelectorAll(".options");
 const filter_category = document.querySelectorAll(".filter-category");
-
 
 for (let i = 0; i < options.length; i++) {
     options[i].addEventListener("click", () => {
@@ -225,7 +222,6 @@ function MinMaxArrayAddTagElementLocalStorage(element, type) {
 }
 
 
-
 //delete tag element
 function deleteElement(type) {
     const delete_tag = document.querySelectorAll(".tag-delete-btn");
@@ -234,12 +230,10 @@ function deleteElement(type) {
             if (type == "region") {
                 const parent = delete_tag[i].parentElement;
                 //delete data from localstorage
-
                 let item1 = localStorage.getItem(parent.innerText);
                 if (String(item1) == item1) {
                     localStorage.removeItem(parent.innerText);
                 }
-
                 //
                 let delete_region_rental_units = document.querySelectorAll(`.${parent.innerText}`);
                 if (parent.innerText == "რაჭა" || parent.innerText == "ლეჩხუმი") {
@@ -296,13 +290,10 @@ function MinMaxArrayDeleteElement(type) {
         delete_tag[i].addEventListener("click", () => {
             if (type == "price") {
                 const parent = delete_tag[i].parentElement;
-
-
                 let item1 = localStorage.getItem("price");
                 if (item1 == item1) {
                     localStorage.removeItem("price");
                 }
-
                 tags_container.removeChild(parent);
                 //min_price_container.splice(i,1);
                 //max_price_container.splice(i,1);
@@ -324,13 +315,10 @@ function MinMaxArrayDeleteElement(type) {
             }
             else if (type == "area") {
                 const parent = delete_tag[i].parentElement;
-
-
                 let item1 = localStorage.getItem("area");
                 if (item1 == item1) {
                     localStorage.removeItem("area");
                 }
-
                 tags_container.removeChild(parent);
                 //min_area_container.splice(i,1);
                 //max_area_container.splice(i,1);
@@ -498,17 +486,25 @@ price_btn.addEventListener("click", () => {
             break;
         }
     }
-    if (flag) {
-        tags_container.removeChild(children[min_index]);
-        MinMaxArrayAddTagElement(min_price_container[0], max_price_container[0], "price");
-        displayPriceData();
+    const containsNumbers = /\d/;
+    const min_price = document.querySelector(".min-price").innerText.trim();
+    const max_price = document.querySelector(".max-price").innerText.trim();
+    if (!containsNumbers.test(min_price) || !containsNumbers.test(max_price)) {
+        alert("enter a valid number");
     }
-    else if (!flag) {
-        MinMaxArrayAddTagElement(min_price_container[0], max_price_container[0], "price");
-        displayPriceData();
+    else {
+        if (flag) {
+            tags_container.removeChild(children[min_index]);
+            MinMaxArrayAddTagElement(min_price_container[0], max_price_container[0], "price");
+            displayPriceData();
+        }
+        else if (!flag) {
+            MinMaxArrayAddTagElement(min_price_container[0], max_price_container[0], "price");
+            displayPriceData();
+        }
+        MinMaxArrayDeleteElement("price");
+        clearAll();
     }
-    MinMaxArrayDeleteElement("price");
-    clearAll();
 })
 
 //area
@@ -555,17 +551,25 @@ area_btn.addEventListener("click", () => {
             break;
         }
     }
-    if (flag) {
-        tags_container.removeChild(children[min_index]);
-        MinMaxArrayAddTagElement(min_area_container[0], max_area_container[0], "area");
-        displayAreaData();
+    const containsNumbers = /\d/;
+    const min_area = document.querySelector(".min-area").innerText.trim();
+    const max_area = document.querySelector(".max-area").innerText.trim();
+    if (!containsNumbers.test(min_area) || !containsNumbers.test(max_area)) {
+        alert("enter a valid number");
     }
-    else if (!flag) {
-        MinMaxArrayAddTagElement(min_area_container[0], max_area_container[0], "area");
-        displayAreaData();
+    else {
+        if (flag) {
+            tags_container.removeChild(children[min_index]);
+            MinMaxArrayAddTagElement(min_area_container[0], max_area_container[0], "area");
+            displayAreaData();
+        }
+        else if (!flag) {
+            MinMaxArrayAddTagElement(min_area_container[0], max_area_container[0], "area");
+            displayAreaData();
+        }
+        MinMaxArrayDeleteElement("area");
+        clearAll();
     }
-    MinMaxArrayDeleteElement("area");
-    clearAll();
 })
 
 
@@ -573,6 +577,7 @@ area_btn.addEventListener("click", () => {
 ///////     API    ////////////////////////
 ///////////////////////////////////////////
 
+//const TOKEN = `9d23f75b-6e75-4c93-8be3-6c099c19a90e`;
 const TOKEN = `9d23f75b-6e75-4c93-8be3-6c099c19a90e`;
 const link = `https://api.real-estate-manager.redberryinternship.ge/api/real-estates`;
 
@@ -683,13 +688,8 @@ function addRentalUnit(tag_name, rental_category1, region_name1, image_link, pri
     zip_code_container.appendChild(zip_code_text);
 
 }
-/*
-in async functions always add elements in localstorage by their addresses. we fetched the data, which means it isn't in localstorage yet.
-if the address is in the local storage then use localstorage data and don't fetch
-*/
 
-//get data from api
-//every element will be unique and will not be fetched twice if it exists in set_of_address set. it contains addresses which every rental unit has and its unique
+
 let set_of_addresses = new Set();
 async function displayRegionData() {
     try {
@@ -713,8 +713,6 @@ async function displayRegionData() {
                         set_of_addresses.add(element.address);
                         new_region_array.push(element);
                         localStorage.setItem(element.address, JSON.stringify(element));
-                        //localStorage.setItem(element.id,JSON.stringify(element));
-                        //localStorage.setItem(element.id,JSON.stringify(element));
                     }
                 })
             }
@@ -724,7 +722,6 @@ async function displayRegionData() {
                         set_of_addresses.add(element.address);
                         new_region_array.push(element);
                         localStorage.setItem(element.address, JSON.stringify(element));
-                        //localStorage.setItem(element.id,JSON.stringify(element));
                     }
                 })
             }
@@ -735,13 +732,10 @@ async function displayRegionData() {
             for (let i = 0; i < unit.length; i++) {
                 unit[i].addEventListener("click", (e) => {
                     localStorage.setItem("house", JSON.stringify(new_region_array[i]));
-                    window.location.href = 'index5.html';
-                    //console.log(unit[i]);
-                    //let k=unit[i].querySelector(".address").innerText;
+                    window.location.href = 'rentalUnit.html';
                 })
             }
             localStorage.setItem("rental-display", JSON.stringify(rental_units_container.innerHTML));
-            //localStorage.setItem("region-counter",JSON.stringify(counter));
         }
     }
     catch (err) {
@@ -771,12 +765,9 @@ async function displayPriceData() {
         for (let i = 0; i < unit.length; i++) {
             unit[i].addEventListener("click", (e) => {
                 localStorage.setItem("house", JSON.stringify(rental_properties_data[i]));
-                window.location.href = 'index5.html';
-                //console.log(unit[i]);
-                //let k=unit[i].querySelector(".address").innerText;
+                window.location.href = 'rentalUnit.html';
             })
         }
-        //localStorage.setItem("price-counter",JSON.stringify(counter));
         localStorage.setItem("rental-display", JSON.stringify(rental_units_container.innerHTML))
     }
     catch (err) {
@@ -806,12 +797,9 @@ async function displayAreaData() {
         for (let i = 0; i < unit.length; i++) {
             unit[i].addEventListener("click", (e) => {
                 localStorage.setItem("house", JSON.stringify(rental_properties_data[i]));
-                window.location.href = 'index5.html';
-                //console.log(unit[i]);
-                //let k=unit[i].querySelector(".address").innerText;
+                window.location.href = 'rentalUnit.html';
             })
         }
-        //localStorage.setItem("area-counter",JSON.stringify(counter));
         localStorage.setItem("rental-display", JSON.stringify(rental_units_container.innerHTML))
     }
     catch (err) {
@@ -841,12 +829,9 @@ async function displayBedCountData() {
         for (let i = 0; i < unit.length; i++) {
             unit[i].addEventListener("click", (e) => {
                 localStorage.setItem("house", JSON.stringify(rental_properties_data[i]));
-                window.location.href = 'index5.html';
-                //console.log(unit[i]);
-                //let k=unit[i].querySelector(".address").innerText;
+                window.location.href = 'rentalUnit.html';
             })
         }
-        //localStorage.setItem("bed-count-counter",JSON.stringify(counter));
         localStorage.setItem("rental-display", JSON.stringify(rental_units_container.innerHTML))
     }
     catch (err) {
@@ -893,7 +878,7 @@ function displaySavedData() {
     units.forEach((element) => {
         element.addEventListener("click", () => {
             let address = element.querySelector(".address").innerText;
-            console.log(address);
+            //console.log(address);
             for (let i = 0; i < localStorage.length; i++) {
                 let key = localStorage.key(i);
                 if (key == address) {
@@ -905,10 +890,8 @@ function displaySavedData() {
     })
 
 }
-
-
 window.addEventListener("load", displaySavedData);
-//localStorage.clear();
+
 
 //modal and listing
 const add_agent_btn = document.querySelector(".add-agent-btn");
@@ -943,95 +926,116 @@ if (overlay.style.visibility != "hidden") {
 
 
 //add agent filtration
-const add_agent_name_form = document.querySelectorAll(".add-agent-inputs");/////correct it
-/*
-for (let i = 0; i < add_agent_name_form.length; i++) {
-    add_agent_name_form[i].addEventListener("input", () => {
-        if (i == 0 || i == 1) {
-            const text = add_agent_name_form[i].value.trim();
-            if (text.length < 2) {
-                add_agent_name_form[i].style.border = "1px solid red";
-                add_agent_name_form[i].classList.remove("add-agent-form-container-symbols");
-                //add_agent_name_form[i].classList.add("add-agent-form-container-check-symbols");
-            }
-            else {
-                add_agent_name_form[i].style.border = "1px solid";
-                //add_agent_name_form[i].classList.remove("add-agent-form-container-check-symbols");
-                add_agent_name_form[i].classList.add("add-agent-form-container-symbols");
-            }
-        }
-    })
-}
-*/
+const add_agent_name_form = document.querySelectorAll(".add-agent-inputs");
 
-add_agent_name_form.forEach((element,index)=>{
-    element.addEventListener("input",()=>{
-        const text=element.value.trim();
-        if(index==0 && text.length<2){
-            element.style.border="1px solid red";
-            let cont=document.querySelector(".agent-name");
+add_agent_name_form.forEach((element, index) => {
+    element.addEventListener("input", () => {
+        const text = element.value.trim();
+        if (index == 0 && text.length < 2) {
+            element.style.border = "1px solid red";
+            let cont = document.querySelector(".agent-name");
             cont.classList.remove("add-agent-form-container-symbols");
             cont.classList.add("add-agent-form-container-check-symbols");
         }
-        else if(index==0 && text.length>=2){
-            element.style.border="1px solid";
-            let cont=document.querySelector(".agent-name");
+        else if (index == 0 && text.length >= 2) {
+            element.style.border = "1px solid";
+            let cont = document.querySelector(".agent-name");
             cont.classList.remove("add-agent-form-container-check-symbols");
             cont.classList.add("add-agent-form-container-symbols")
         }
-        if(index==1 && text.length<2){
-            element.style.border="1px solid red";
-            let cont=document.querySelector(".agent-surname");
+        if (index == 1 && text.length < 2) {
+            element.style.border = "1px solid red";
+            let cont = document.querySelector(".agent-surname");
             cont.classList.remove("add-agent-form-container-symbols");
             cont.classList.add("add-agent-form-container-check-symbols");
         }
-        else if(index==1 && text.length>=2){
-            element.style.border="1px solid";
-            let cont=document.querySelector(".agent-surname");
+        else if (index == 1 && text.length >= 2) {
+            element.style.border = "1px solid";
+            let cont = document.querySelector(".agent-surname");
             cont.classList.remove("add-agent-form-container-check-symbols");
             cont.classList.add("add-agent-form-container-symbols")
         }
-        if(index==2 && !text.includes("@redberry.ge")){
-            element.style.border="1px solid red";
-            let cont=document.querySelector(".agent-gmail");
+        if (index == 2 && !text.includes("@redberry.ge")) {
+            element.style.border = "1px solid red";
+            let cont = document.querySelector(".agent-gmail");
             cont.classList.remove("add-agent-form-container-gmail");
             cont.classList.add("add-agent-form-container-check-gmail");
         }
-        else if(index==2 && text.includes("@redberry.ge")){
-            element.style.border="1px solid";
-            let cont=document.querySelector(".agent-gmail");
+        else if (index == 2 && text.includes("@redberry.ge")) {
+            element.style.border = "1px solid";
+            let cont = document.querySelector(".agent-gmail");
             cont.classList.remove("add-agent-form-container-check-gmail");
             cont.classList.add("add-agent-form-container-gmail");
         }
-
-        if(index==3 && !/^\d+$/.test(text)){
-            element.style.border="1px solid red";
-            let cont=document.querySelector(".agent-phone");
+        if (index == 3 && !/^\d+$/.test(text)) {
+            element.style.border = "1px solid red";
+            let cont = document.querySelector(".agent-phone");
             cont.classList.remove("add-agent-form-container-phone");
             cont.classList.add("add-agent-form-container-check-phone");
         }
-        else if(index==3 && /^\d+$/.test(text)){
-            element.style.border="1px solid";
-            let cont=document.querySelector(".agent-phone");
+        else if (index == 3 && /^\d+$/.test(text)) {
+            element.style.border = "1px solid";
+            let cont = document.querySelector(".agent-phone");
             cont.classList.remove("add-agent-form-container-check-phone");
             cont.classList.add("add-agent-form-container-phone");
         }
-       
     })
 })
 
-const add_agent_form=document.querySelector(".add-agent-forms");
-add_agent_form.addEventListener("submit",(e)=>{
-    e.preventDefault();
-    let img=document.querySelector("#add-agent-image").value;
-    let file=new FileReader(img);
-    file.readAsDataURL(file);
-    //const forms=new FormData(add_agent_form);
-    const forms=new FormData(file.result);
-    for(let obj of forms){
-        console.log(obj[0]+" "+obj[1]);
+
+//agent data upload
+const request_link = `https://api.real-estate-manager.redberryinternship.ge/api/agents`;
+const add_agent_form = document.querySelector(".add-agent-forms");
+
+add_agent_form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    const avatar=document.getElementById("add-agent-image").files[0];
+    formData.append("avatar",avatar,"avatar");
+
+    //avatar(convert to base64, 2 ways)
+    // I
+    // const avatar=document.getElementById("add-agent-image").files[0];
+    // let file=new FileReader();
+    // file.readAsDataURL(avatar);
+    // file.addEventListener("load",()=>{
+    //     let to64=btoa(file.result);
+    //     console.log(to64);
+    //     formData.append("avatar",JSON.stringify(to64));
+    // })
+    //
+    // II
+    // const avatar=document.getElementById("add-agent-image").files[0];
+    // const blob=new Blob([avatar], { type: avatar.type });
+    // formData.append("avatar",blob);
+
+    const data = Object.fromEntries(formData.entries()); // Convert to JSON object
+    try {
+        const response = await fetch(request_link, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${TOKEN}`,
+                'accept': 'application/json',
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data) // Send JSON string
+        });
+
+        if (response.ok) {
+            console.log("Submitted successfully");
+            const responseData = await response.json();
+            console.log(responseData);
+        } else {
+            const errorData = await response.json();
+            console.log(`Error occurred: ${response.statusText}`, errorData);
+        }
+    } catch (err) {
+        console.log(err);
     }
-})
+});
+
+
 
 
 
