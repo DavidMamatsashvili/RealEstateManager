@@ -1,7 +1,6 @@
 const filter_hover_img = document.querySelectorAll(".filter-hover-img");
 const options = document.querySelectorAll(".options");
 const filter_category = document.querySelectorAll(".filter-category");
-//require("dotenv").config({ path:'/node_modules/dotenv'});
 
 
 for (let i = 0; i < options.length; i++) {
